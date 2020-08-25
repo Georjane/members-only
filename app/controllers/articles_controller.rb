@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    
   end
 
   # POST /articles
