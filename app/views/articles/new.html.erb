@@ -1,3 +1,28 @@
-<%= render 'form', article: @article %>
 
-<%= link_to 'Back', articles_path %>
+<%= simple_form_for(@article) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="title is-4">
+          <h4>Create article here</h4>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.input :body, label:"Your article:",wrapper:false, input_html: {class: "textarea"},autofocus:true, label_html: {class: "label"} %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.button :submit, class: "button is-dark" %>
+            <%= link_to 'Back', articles_path, class: "button is-dark"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -35,21 +35,10 @@
       <div class="navbar-end">
         <div class="field is-grouped">
           <p class="control">
-            <%= link_to "Create article", root_path, class: "button is-info is-inverted" %>
+            <%= display_create_button %>
           </p>
           
-            <% if user_signed_in? %>
-              <p>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-danger" %>
-              </p>
-            <% else %>
-            <p class="control">
-              <%= link_to "Sign In", new_user_session_path, class: "button is-info"%>
-            </p>
-            <p class="control">
-              <%= link_to "Sign Up", new_user_registration_path, class: "button is-info"%>
-            </p>
-            <% end %>
+            <%= display_user_signup_or_login %>
         </div>
       </div>
     </div>
