@@ -3,15 +3,15 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="title is-4">
-          <h4>Recent Articles</h4>
+          <h4>Recent posts</h4>
         </div>
-        <%@articles.each do |article| %>
+        <%@posts.each do |post| %>
         <div class="box">
           <div class="media">
             <div class="media-content">
               <div class="content">
-                <%= article.body %><br/><br/>
-                <%=display_author_name(article)%>
+                <%= post.body %><br/><br/>
+                <%=display_author_name(post)%>
               </div>
             </div>
           </div>

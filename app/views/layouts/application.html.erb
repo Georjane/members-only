@@ -8,17 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <% if flash[:notice] %>
-      <div class="notification is-primary global-notification has-text-centered">
-        <p class="notice"><%= notice %></p>
-      </div>
-  <% end %>
-  <% if flash[:alert] %>
-      <div class="notification is-danger global-notification has-text-centered">
-        <p class="alert"><%= alert %></p>
-      </div>
-  <% end %>
+  
   <!-- Navbar -->
   <nav class="navbar is-dark px-4 py-2">
       <div class="navbar-brand">
@@ -43,7 +33,12 @@
       </div>
     </div>
     </nav>
-
+  <div class="has-text-centered">
+    <p class="has-text-success"><%= notice %></p>
+  </div>
+  <div class="has-text-centered">
+    <p class="has-text-danger"><%= alert %></p>
+  </div>
   <body>
     <%= yield %>
   </body>

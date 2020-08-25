@@ -13,7 +13,7 @@ module ApplicationHelper
   def display_create_button
     button_display = ''
     if user_signed_in?
-      button_display = link_to('Create article', new_article_path, class: 'button is-info is-inverted is-outlined')
+      button_display = link_to('Create post', new_post_path, class: 'button is-info is-inverted is-outlined')
     end
     button_display
   end
