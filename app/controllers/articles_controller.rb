@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
-    @articles = Article.new
+    @article = Article.new
   end
 
   # GET /articles/1
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
