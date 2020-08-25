@@ -1,22 +1,24 @@
+
 <%= render 'form', article: @article %>
-
-<h1>Recent Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Article</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.body %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="title is-4">
+          <h4>Recent Articles</h4>
+        </div>
+        <%@articles.each do |article| %>
+        <div class="box">
+          <div class="media">
+            <div class="media-content">
+              <div class="content">
+                <%= article.body %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+  </div>     
+  </div>
+</div>
