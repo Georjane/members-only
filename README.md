@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+- [ ] Users => model, controllers
+    user public => homepage
+    user,author can sign in => session (auth)
+    user can sign up
+    user can log out
+    user can add a article
+    user can edit his article
+    user can delete his article
+- [ ] Posts => models, controllers
+
