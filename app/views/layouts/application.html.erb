@@ -10,15 +10,50 @@
   </head>
 
   <% if flash[:notice] %>
-      <div class="notification is-primary global-notification">
+      <div class="notification is-primary global-notification has-text-centered">
         <p class="notice"><%= notice %></p>
       </div>
   <% end %>
   <% if flash[:alert] %>
-      <div class="notification is-danger global-notification">
+      <div class="notification is-danger global-notification has-text-centered">
         <p class="alert"><%= alert %></p>
       </div>
   <% end %>
+  <!-- Navbar -->
+  <nav class="navbar is-dark px-4 py-2">
+      <div class="navbar-brand">
+      <%= link_to root_path, class: "navbar-item" do %>
+        <h1 class="title is-5 has-text-white">Members only</h1>
+      <% end %>
+      <div class="navbar-burger burger" data-target="navbarExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="navbarExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="field is-grouped">
+          <p class="control">
+            <%= link_to "Create article", root_path, class: "button is-info is-inverted" %>
+          </p>
+          
+            <% if user_signed_in? %>
+              <p>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-danger" %>
+              </p>
+            <% else %>
+            <p class="control">
+              <%= link_to "Sign In", new_user_session_path, class: "button is-info"%>
+            </p>
+            <p class="control">
+              <%= link_to "Sign Up", new_user_registration_path, class: "button is-info"%>
+            </p>
+            <% end %>
+        </div>
+      </div>
+    </div>
+    </nav>
 
   <body>
     <%= yield %>
