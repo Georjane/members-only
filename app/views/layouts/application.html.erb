@@ -8,7 +8,37 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
+  <!-- Navbar -->
+  <nav class="navbar is-dark px-4 py-2">
+      <div class="navbar-brand">
+      <%= link_to root_path, class: "navbar-item" do %>
+        <h1 class="title is-5 has-text-white">Members only</h1>
+      <% end %>
+      <div class="navbar-burger burger" data-target="navbarExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="navbarExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="field is-grouped">
+          <p class="control">
+            <%= display_create_button %>
+          </p>
+          
+            <%= display_user_signup_or_login %>
+        </div>
+      </div>
+    </div>
+    </nav>
+  <div class="has-text-centered">
+    <p class="has-text-success"><%= notice %></p>
+  </div>
+  <div class="has-text-centered">
+    <p class="has-text-danger"><%= alert %></p>
+  </div>
   <body>
     <%= yield %>
   </body>

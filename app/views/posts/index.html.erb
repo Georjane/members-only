@@ -1,0 +1,23 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="title is-4">
+          <h4>Recent posts</h4>
+        </div>
+        <%@posts.each do |post| %>
+        <div class="box">
+          <div class="media">
+            <div class="media-content">
+              <div class="content">
+                <%= post.body %><br/><br/>
+                <%=display_author_name(post)%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+  </div>     
+  </div>
+</div>

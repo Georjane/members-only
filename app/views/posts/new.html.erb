@@ -1,0 +1,28 @@
+
+<%= simple_form_for(@post) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="title is-4">
+          <h4>Create post here</h4>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.input :body, label:"Your post:",wrapper:false, input_html: {class: "textarea"},autofocus:true, label_html: {class: "label"} %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.button :submit, class: "button is-dark" %>
+            <%= link_to 'Back', posts_path, class: "button is-dark"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
